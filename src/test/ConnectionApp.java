@@ -14,7 +14,7 @@ public class ConnectionApp {
 	public static void main(String[] args) {
 		final CountDownLatch countDownLatch = new CountDownLatch(1);
 		//String s = "192.168.74.253:2181,192.168.74.253:2182,192.168.74.253:2183";
-		String s = "10.168.1.39:2181";
+		String s = "127.0.0.1:2181";
 		int sessionTimeOut = 3000;
 		ZooKeeper zooKeeper = null;
 		try {
