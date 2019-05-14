@@ -13,7 +13,7 @@ public class ZookeeperConf {
 	@Bean 
 	public CuratorFramework getCuratorFramework() { 
 		RetryPolicy retryPolicy =new ExponentialBackoffRetry(1000,3); 
-		CuratorFramework client= CuratorFrameworkFactory.newClient("10.168.1.39:2181",
+		CuratorFramework client= CuratorFrameworkFactory.newClient("127.0.0.1:2181",
 		retryPolicy); 
 		client.start(); 
 		return client; 

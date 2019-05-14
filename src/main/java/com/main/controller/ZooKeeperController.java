@@ -4,6 +4,7 @@ import org.apache.curator.framework.CuratorFramework;
 import org.apache.zookeeper.data.Stat;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -19,11 +20,11 @@ public class ZooKeeperController {
 	 * @return
 	 * @throws Exception
 	 */
-	@RequestMapping("/createHelloNode")
+	@RequestMapping("/createHelloNode/{root}/{root_content}")
 	@ResponseBody
-	public String createHelloNode() throws Exception {
+	public String createHelloNode(@PathVariable String root,@PathVariable String root_content) throws Exception {
 		System.out.println("进入添加根节点方法");
-		client.create().forPath("/hello",new byte[0]);
+		client.create().forPath("/"+root,root_content.getBytes());
 		return "创建Hello节点成功";
 	}
 	
