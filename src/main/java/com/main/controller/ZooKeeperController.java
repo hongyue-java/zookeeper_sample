@@ -73,10 +73,10 @@ public class ZooKeeperController {
 
 	/**
 	 *
-	 *http://localhost:9091/updateZKNode
+	 *http://localhost:9091/getZKNode
 	 * 	 * @return
 	 * 	 * @throws Exception
-	 * 	 修改根节点数据
+	 * 	 查找根节点数据
 	 */
 	@RequestMapping("/getZKNode/{root}")
 	@ResponseBody
